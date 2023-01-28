@@ -43,8 +43,10 @@ fun StartScreen(navController: NavHostController) {
                     .fillMaxWidth(0.5f)
                     .padding(vertical = 8.dp),
                 onClick = {
-                    mViewModel.initDataBase((TYPE_ROOM))
-                    navController.navigate(route = NavRoute.Main.route)
+                    mViewModel.initDataBase(TYPE_ROOM){
+                        navController.navigate(route = NavRoute.Main.route)
+                    }
+
                 }) {
                 Text(text = "Room database")
             }
@@ -53,8 +55,10 @@ fun StartScreen(navController: NavHostController) {
                     .fillMaxWidth(0.5f)
                     .padding(vertical = 8.dp),
                 onClick = {
-                    mViewModel.initDataBase((TYPE_FIREBASE))
-                    navController.navigate(route = NavRoute.Main.route)
+                    mViewModel.initDataBase(TYPE_FIREBASE){
+                        navController.navigate(route = NavRoute.Main.route)
+                    }
+
                 }) {
                 Text(text = "Firebase database")
             }
