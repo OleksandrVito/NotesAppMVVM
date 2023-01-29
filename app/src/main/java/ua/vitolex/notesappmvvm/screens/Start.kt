@@ -19,6 +19,9 @@ import ua.vitolex.notesappmvvm.MainViewModel
 import ua.vitolex.notesappmvvm.MainViewModelFactory
 import ua.vitolex.notesappmvvm.navigation.NavRoute
 import ua.vitolex.notesappmvvm.ui.theme.NotesAppMVVMTheme
+import ua.vitolex.notesappmvvm.utils.Constants.Keys.FIREBASE_DATABASE
+import ua.vitolex.notesappmvvm.utils.Constants.Keys.ROOM_DATABASE
+import ua.vitolex.notesappmvvm.utils.Constants.Keys.WHAT_WILL_WE_USE
 import ua.vitolex.notesappmvvm.utils.TYPE_FIREBASE
 import ua.vitolex.notesappmvvm.utils.TYPE_ROOM
 
@@ -36,7 +39,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "What will we use?")
+            Text(text = WHAT_WILL_WE_USE)
             Button(
                 modifier = Modifier
                     .fillMaxWidth(0.5f)
@@ -47,7 +50,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     }
 
                 }) {
-                Text(text = "Room database")
+                Text(text = ROOM_DATABASE)
             }
             Button(
                 modifier = Modifier
@@ -59,7 +62,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     }
 
                 }) {
-                Text(text = "Firebase database")
+                Text(text = FIREBASE_DATABASE)
             }
 
 
