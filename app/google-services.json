@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "603835481251",
+    "project_id": "notes-app-3cc89",
+    "storage_bucket": "notes-app-3cc89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603835481251:android:a1fffaa90fb620cb8e1316",
+        "android_client_info": {
+          "package_name": "ua.vitolex.notesappmvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603835481251-7glok44hiatgre0dcsobuab9e6b5u6pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNxyY4ZqV4NT4mIS1velltSbTzdFS022s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603835481251-7glok44hiatgre0dcsobuab9e6b5u6pm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
