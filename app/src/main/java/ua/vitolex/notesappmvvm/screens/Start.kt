@@ -2,6 +2,7 @@ package ua.vitolex.notesappmvvm.screens
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -15,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.Navigation
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import ua.vitolex.notesappmvvm.MainViewModel
@@ -75,7 +77,9 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                             LOGIN = login
                             PASSWORD = password
                             viewModel.initDataBase(TYPE_FIREBASE) {
+                                navController.navigate(NavRoute.Main.route)
                             }
+                            Log.d("MyLog", "meeeesss")
                         },
                         enabled = login.isNotEmpty() && password.isNotEmpty()
                     ) {
