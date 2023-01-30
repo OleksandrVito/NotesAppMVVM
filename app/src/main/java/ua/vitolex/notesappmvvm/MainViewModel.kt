@@ -3,8 +3,10 @@ package ua.vitolex.notesappmvvm
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ua.vitolex.notesappmvvm.database.firebase.AppFirebaseRepository
 import ua.vitolex.notesappmvvm.database.room.AppRoomDatabase
 import ua.vitolex.notesappmvvm.database.room.repository.RoomRepository
 import ua.vitolex.notesappmvvm.model.Note
@@ -22,6 +24,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 val dao = AppRoomDatabase.getInstance(context = context).getRoomDao()
                 REPOSITORY = RoomRepository(dao)
                 onSuccess()
+            }
+            TYPE_FIREBASE->{
+              REPOSITORY=AppFirebaseRepository()
+                REPOSITORY.connectToDatabase(
+                    {onSuccess()},
+                    {Log.d("MyLog","Success")}
+                )
             }
         }
     }
