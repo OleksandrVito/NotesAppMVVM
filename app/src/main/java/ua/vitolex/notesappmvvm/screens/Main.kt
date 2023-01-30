@@ -29,6 +29,10 @@ import ua.vitolex.notesappmvvm.MainViewModelFactory
 import ua.vitolex.notesappmvvm.model.Note
 import ua.vitolex.notesappmvvm.navigation.NavRoute
 import ua.vitolex.notesappmvvm.ui.theme.NotesAppMVVMTheme
+import ua.vitolex.notesappmvvm.utils.Constants
+import ua.vitolex.notesappmvvm.utils.DB_TYPE
+import ua.vitolex.notesappmvvm.utils.TYPE_FIREBASE
+import ua.vitolex.notesappmvvm.utils.TYPE_ROOM
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -60,12 +64,17 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
 
 @Composable
 fun NoteItem(note: Note, navController: NavHostController) {
+    val noteId = when(DB_TYPE){
+        TYPE_ROOM->note.id
+        TYPE_FIREBASE->note.firebaseId
+        else-> Constants.Keys.EMPTY
+    }
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(NavRoute.Note.route + "/${note.id}")
+                navController.navigate(NavRoute.Note.route + "/${noteId}")
             },
         elevation = 6.dp
     ) {

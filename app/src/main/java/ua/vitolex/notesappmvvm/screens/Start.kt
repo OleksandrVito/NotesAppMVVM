@@ -77,6 +77,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                             LOGIN = login
                             PASSWORD = password
                             viewModel.initDataBase(TYPE_FIREBASE) {
+                                DB_TYPE= TYPE_FIREBASE
                                 navController.navigate(NavRoute.Main.route)
                             }
                             Log.d("MyLog", "meeeesss")
@@ -104,6 +105,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                         .padding(vertical = 8.dp),
                     onClick = {
                         viewModel.initDataBase(TYPE_ROOM) {
+                            DB_TYPE= TYPE_ROOM
                             navController.navigate(route = NavRoute.Main.route)
                         }
 
